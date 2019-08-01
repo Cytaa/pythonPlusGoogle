@@ -11,5 +11,3 @@ client = gspread.authorize(creds)
 sheet = client.open("Copy of Legislators 2017").sheet1
 
 
-allRecords = sheet.get_all_records()
-print(allRecords)
