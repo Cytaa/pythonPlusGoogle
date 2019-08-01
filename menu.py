@@ -1,5 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import sys
 
 class TextMenu:
     def __init__(self):
@@ -9,7 +10,13 @@ class TextMenu:
         print("Welcome!")
         print("press 1 to establishe a connection with google sheets")
         print("press 2 to quit")
-        self.chooser = int(input("Enter a number: "))
+        chooser = int(input("Enter a number: "))
+
+        if (chooser == 1):
+            self.estabAConnect()
+        elif(chooser == 2):
+            sys.exit(0)      
+            
     
     def estabAConnect(self):
         scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
