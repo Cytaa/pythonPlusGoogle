@@ -25,8 +25,15 @@ class TextMenu:
 
         self.sheet = client.open("Copy of Legislators 2017").sheet1
 
-    def showAllRecords(self):
+        print("Connection was established")
+        input("Press any key to get back to menu")
+
+        self.createTxtMenu()
+
+    def getAllRecords(self):
         print(self.sheet.get_all_records())
+
+    
         
 
 
