@@ -1,5 +1,3 @@
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 import sys
 from os import system
 from connToGoogle import connToGoogle
