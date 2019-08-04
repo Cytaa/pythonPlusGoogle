@@ -1,3 +1,8 @@
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+
+
 class connToGoogle:
     def __init__(self):
         scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
