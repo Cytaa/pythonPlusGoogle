@@ -1,6 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-
+from datetime import date
 
 
 class connToGoogle:
@@ -11,6 +11,28 @@ class connToGoogle:
 
         self.sheet = client.open("Copy of Legislators 2017").sheet1
     
-    def getAllRecords(self):
+    def printAllRecords(self):
         print(self.sheet.get_all_records())
-        input("Press any key to get back to menu:")
+    
+    def clearAllRecords(self):
+        self.sheet.clear()
+    
+    def setACell(self, row, column, data):
+        self.sheet.update_cell(row, column, data)
+    
+    def getCell(self, row, column):
+        return self.sheet.cell(row, column)
+
+    def printCell(self, row, column):
+        print(self.getCell(row, column))
+
+    def insertData(self, data):
+        self.setACell(1,1,date.today().strftime("%d/%m/%Y"))
+        self.setACell(1,2,data)
+
+
+
+
+test = connToGoogle()
+test.clearAllRecords()
+test.insertData("twoja stara zapierdala")
