@@ -26,21 +26,25 @@ class TextMenu:
             sys.exit(0)
     
     def createSheetMenu(self):
-        print("""press 1 to view all roves
-        press 2 to clear all cells in sheet
-        press 3 to get back to the main menu
+        print("""press 1 to view all roves: 
+press 2 to inesrt new row into the base: 
+press 3 to clear all cells: 
+press 4 to get back to main menu: 
             """)
-        chooser = int(input("input the number and press ender to confirm"))
+        chooser = int(input("input the number and press ender to confirm: "))
 
         if chooser == 1:
             system("cls")
             self.connection.printAllRecords()
         elif chooser == 2:
             system("cls")
-            self.connection.clearAllRecords()
+            data = input("insert data")
+            self.connection.insertData(data)
         elif chooser == 3:
             system("cls")
-            self.createTxtMenu()
+            self.connection.clearAllRecords()
+        elif chooser == 4:
+            self.createTxtMenu
             
             
 

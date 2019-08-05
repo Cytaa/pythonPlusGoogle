@@ -37,6 +37,3 @@ class connToGoogle:
 
 
 
-
-test = connToGoogle()
-test.insertData("no elo kurwa")
