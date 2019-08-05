@@ -27,12 +27,16 @@ class connToGoogle:
         print(self.getCell(row, column))
 
     def insertData(self, data):
-        self.setACell(1,1,date.today().strftime("%d/%m/%Y"))
-        self.setACell(1,2,data)
+        row = self.nextAvilible()
+        self.setACell(row,1,date.today().strftime("%d/%m/%Y"))
+        self.setACell(row,2,data)
+    
+    def nextAvilible(self):
+        strList = self.sheet.get_all_records()
+        return len(strList) + 2 
 
 
 
 
 test = connToGoogle()
-test.clearAllRecords()
-test.insertData("twoja stara zapierdala")
+test.insertData("no elo kurwa")
