@@ -37,15 +37,22 @@ press 4 to get back to main menu:
             system("cls")
             self.connection.printAllRecords()
             input("press enter to procede")
+            system("cls")
+            self.createSheetMenu()
         elif chooser == 2:
             system("cls")
             data = input("insert data")
             self.connection.insertData(data)
+            input("your data was inserted correctly press enter to proceed")
+            system("cls")
+            self.createSheetMenu()
         elif chooser == 3:
             system("cls")
             self.connection.clearAllRecords()
+            input("All cells have been cleared press enter to proceed")
+            system("cls")
         elif chooser == 4:
-            self.createTxtMenu
+            self.createTxtMenu()
             
             
 

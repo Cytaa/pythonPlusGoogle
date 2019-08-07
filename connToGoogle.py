@@ -14,7 +14,10 @@ class connToGoogle:
         self.checkTitles()
     
     def printAllRecords(self):
-        print(self.sheet.get_all_records())
+        listOfAll = self.sheet.get_all_records()
+
+        for i in range(len(listOfAll)):
+            print(listOfAll[i])
     
     def clearAllRecords(self):
         self.sheet.clear()
