@@ -10,6 +10,8 @@ class connToGoogle:
         client = gspread.authorize(creds)
 
         self.sheet = client.open("Copy of Legislators 2017").sheet1
+        
+        self.checkTitles()
     
     def printAllRecords(self):
         print(self.sheet.get_all_records())
@@ -35,5 +37,15 @@ class connToGoogle:
         strList = self.sheet.get_all_records()
         return len(strList) + 2 
 
+    def checkTitles(self):
+        if self.sheet.cell(1,1) != "Data":
+            self.sheet.update_cell(1,1,"Data")
+        
+        if  self.sheet.cell(1,1) != "Value":
+            self.sheet.update_cell(1,2,"Value")
+        
+
+
+test = connToGoogle()
 
 

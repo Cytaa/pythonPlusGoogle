@@ -36,6 +36,7 @@ press 4 to get back to main menu:
         if chooser == 1:
             system("cls")
             self.connection.printAllRecords()
+            input("press enter to procede")
         elif chooser == 2:
             system("cls")
             data = input("insert data")
