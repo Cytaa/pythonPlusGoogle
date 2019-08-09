@@ -41,8 +41,13 @@ press 4 to get back to main menu:
             self.createSheetMenu()
         elif chooser == 2:
             system("cls")
-            data = input("insert data")
-            self.connection.insertData(data)
+            data = input("insert data: ")
+            try:
+                self.connection.insertData(float(data))    
+            except ValueError:
+                print("Data must be a number")
+
+            
             input("your data was inserted correctly press enter to proceed")
             system("cls")
             self.createSheetMenu()
