@@ -44,11 +44,16 @@ class connToGoogle:
         if self.sheet.cell(1,1) != "Data":
             self.sheet.update_cell(1,1,"Data")
         
-        if  self.sheet.cell(1,1) != "Value":
+        if  self.sheet.cell(1,2) != "Value":
             self.sheet.update_cell(1,2,"Value")
         
-
-
-test = connToGoogle()
-
+            if  self.sheet.cell(1,3) != "Limit":
+                self.sheet.update_cell(1,3,"Limit")
+    
+    def setLimit(self, limit):
+        self.setACell(2,3,limit)
+    
+            
+        
+        
 

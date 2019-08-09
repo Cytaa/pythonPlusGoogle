@@ -29,7 +29,8 @@ class TextMenu:
         print("""press 1 to view all roves: 
 press 2 to inesrt new row into the base: 
 press 3 to clear all cells: 
-press 4 to get back to main menu: 
+press 4 to set a limit to your operations:
+press 5 to get back to main menu: 
             """)
         chooser = int(input("input the number and press ender to confirm: "))
 
@@ -42,6 +43,7 @@ press 4 to get back to main menu:
         elif chooser == 2:
             system("cls")
             data = input("insert data: ")
+            
             try:
                 self.connection.insertData(float(data))    
             except ValueError:
@@ -57,6 +59,15 @@ press 4 to get back to main menu:
             input("All cells have been cleared press enter to proceed")
             system("cls")
         elif chooser == 4:
+            limit = input("Insert a numeric value: ")
+            
+            try:
+                self.connection.setLimit(float(limit))
+            except ValueError:
+                print("data must be a number")     
+            self.createSheetMenu()
+                
+        elif chooser == 5:
             self.createTxtMenu()
             
             
