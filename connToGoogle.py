@@ -73,3 +73,6 @@ class connToGoogle:
        return False
             
     
+# test = connToGoogle()
+# test.setLimit(40)
+# print(test.overBudget())
