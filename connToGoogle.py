@@ -72,7 +72,8 @@ class connToGoogle:
         
        return False
             
+
+test = connToGoogle()
+print(test.overBudget())
+input("press enter to proceed")
     
-# test = connToGoogle()
-# test.setLimit(40)
-# print(test.overBudget())

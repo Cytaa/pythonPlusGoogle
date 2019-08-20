@@ -51,7 +51,8 @@ press 5 to get back to main menu:
             except ValueError:
                 print("Data must be a number")
             
-            #self.budget()
+            self.budget()
+            
             
             system("cls")
             self.createSheetMenu()
@@ -83,20 +84,13 @@ press 5 to get back to main menu:
             self.createTxtMenu()
 
     def budget(self):
-        #does not work yet!!!!!!!
-        if connection.overBudget() == True:
-            print("you are over your budget") 
-        system("cls")          
+        #does not work
+        try:
+            connToGoogle.overBudget()
+        except:
+            print("does not work")
+            input("to proceed press enter")
             
-
-
-
-
-
-
-        
-        
-
 
 
 
